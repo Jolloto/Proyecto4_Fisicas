@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rotate_Camera : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 10f;
+    private float rotationSpeed = 30f;
     private float horizontalInput;
 
     private void Update()

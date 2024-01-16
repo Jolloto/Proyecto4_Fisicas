@@ -44,15 +44,11 @@ public class Loop : MonoBehaviour
         }
 
         whileIndex = 1;
+
         while (whileIndex <= 10)
         {
             Debug.Log($"whileIndex = {whileIndex}");
             whileIndex++;
-        }
-
-        for (int i = 1; i <= 100; i++)
-        {
-            Debug.Log($"{i}");
         }
     }
 }

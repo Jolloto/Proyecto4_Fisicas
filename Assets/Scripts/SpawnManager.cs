@@ -9,21 +9,56 @@ public class SpawnManager : MonoBehaviour
 
     private float spawnLimit = 8f;
 
+    private int enemiesInScene;
+    private int enemiesPerWave = 1;
+
+    private Player_Controller playerController;
+
+    private bool powerupInScene;
+
     private void Start()
     {
-        Instantiate(enemyPrefab,
-            GenerateRandomPosition(),
-            Quaternion.identity);
+        playerController = FindObjectOfType<Player_Controller>();
 
-        Instantiate(powerupPrefab,
-            new Vector3(0, 0, -3f),
-            Quaternion.identity);
+        powerupInScene = false;
+        enemiesPerWave = 1;
+        SpawnEnemyWave(enemiesPerWave);
+    }
+
+    private void SpawnEnemyWave(int enemiesToSpawn) 
+    { 
+        for (int i = 0; i < enemiesToSpawn; i++) 
+        { 
+          Instantiate(enemyPrefab, GenerateRandomPosition(), Quaternion.identity);
+            enemiesInScene++;
+        }
+
+        if (!powerupInScene && enemiesToSpawn > 1)
+        {
+
+            Instantiate(powerupPrefab,
+                GenerateRandomPosition(),
+                Quaternion.identity);
+
+            powerupInScene = true;
+        }
+    }
+
+    public void PowerupFinished() 
+    {
+        powerupInScene = false;
+    }
+
+    public void EnemyDestroyed()
+    {
+        enemiesInScene--;
     }
 
     private Vector3 GenerateRandomPosition()
     {
         float x = Random.Range(-spawnLimit, spawnLimit);
         float z = Random.Range(-spawnLimit, spawnLimit);
+
         return new Vector3(x, 0, z);
     }
 }
