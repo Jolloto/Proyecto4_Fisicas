@@ -11,7 +11,7 @@ public class Loop : MonoBehaviour
 
     private void Start()
     {
-        // Bucle que muestra los números del 1 al 10
+        // Bucle que muestra los numeros del 1 al 10
         for (int i = 1; i <= 10; i++)
         {
             Debug.Log($"{i}");
@@ -50,5 +50,12 @@ public class Loop : MonoBehaviour
             Debug.Log($"whileIndex = {whileIndex}");
             whileIndex++;
         }
+
+        int number;
+        for (int i = 1; i <= 20; i++)
+        {
+            Debug.Log($"number" + "x" + i + "=" + number*i);
+        }
+        
     }
 }
