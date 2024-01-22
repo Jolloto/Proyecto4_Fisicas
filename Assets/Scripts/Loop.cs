@@ -51,11 +51,7 @@ public class Loop : MonoBehaviour
             whileIndex++;
         }
 
-        int number;
-        for (int i = 1; i <= 20; i++)
-        {
-            Debug.Log($"number" + "x" + i + "=" + number*i);
-        }
+        
         
     }
 }
