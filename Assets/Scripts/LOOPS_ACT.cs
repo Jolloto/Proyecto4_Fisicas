@@ -78,8 +78,28 @@ public class LOOPS_ACT : MonoBehaviour
 
     private void ACT8()
     {
-
+        int number=11;
+        for (int i = 1; i <= 20; i++)
+        {
+            Debug.Log(number + "x" + i + "=" + number * i);
+        }
     }
+
+    private void ACT9()
+    {
+        for (int i = 1; i <=10; i++)
+        {
+            Debug.Log($"Tabla de multiplicar del {i}");
+            for (int j = 1; j <= 20; i++)
+            {
+                int result = i * j; 
+                Debug.Log($"{i} x {j} = {result}");
+            }
+
+        }
+    }
+}
+
 
     private void Start()
     {
@@ -99,24 +119,12 @@ public class LOOPS_ACT : MonoBehaviour
 
         ACT8();
 
+        ACT9();
 
 
 
-
-
-        int AstonMartin = 11;
-        for (int i = 1; i <= 20; i++)
-        {
-            int result = AstonMartin * i;
-            Debug.Log(AstonMartin + " x " + i + " = " + result);
-        }
-
-        int number=11;
-        for (int i = 1; i <= 20; i++)
-        {
-            Debug.Log(number + "x" + i + "=" + number * i);
-        }
+        
 
         //Las tablas (1,2,3,4,5,6,7,8,9,10,11)  dentro de la tabla (1 al 11)
     }
-}
+
